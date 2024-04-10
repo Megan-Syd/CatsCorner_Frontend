@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import Class from "./Class";
 import Contact from "./Contact";
 import Login from "./Login";
+import Footer from "./Footer";
 
 function App() {
   return (
@@ -14,10 +15,10 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );
 }
 
 export default App;
-
