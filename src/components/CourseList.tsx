@@ -1,26 +1,28 @@
 interface Course {
-  title: string;
+  name: string;
   description: string;
+  schedule: string;
 }
 interface Props {
   courses: Course[];
 }
 function CourseList({ courses }: Props) {
   return (
-    <div>
-      <h2>List of Courses</h2>
-      <table>
+    <div className="container my-3 table-sm">
+      <table className="table">
         <thead>
           <tr>
             <th>Title</th>
             <th>Description</th>
+            <th>Schedule</th>
           </tr>
         </thead>
         <tbody>
           {courses.map((course, index) => (
             <tr key={index}>
-              <td>{course.title}</td>
+              <td>{course.name}</td>
               <td>{course.description}</td>
+              <td>{course.schedule}</td>
             </tr>
           ))}
         </tbody>

@@ -11,7 +11,7 @@ function App() {
   const [courses, setCourses] = useState([]);
   useEffect(() => {
     // Fetch data from the API
-    fetch("https://api.example.com/courses")
+    fetch("http://localhost:8080/api/courses")
       .then((response) => response.json())
       .then((data) => {
         setCourses(data); // Set the fetched data to the state
