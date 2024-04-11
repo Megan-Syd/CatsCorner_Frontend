@@ -1,6 +1,7 @@
 import React from 'react';
 import { OAuthButtonGroup } from './OAuthButtonGroup'
 import { PasswordField } from './PasswordField'
+import { Link } from 'react-router-dom';
 
 export const Login = () => (
   <div className="container-lg py-4">
@@ -8,7 +9,7 @@ export const Login = () => (
       <div className="col-md-6">
         <div className="text-center">
           <h2 className="mt-4 mb-3">Log in to your account</h2>
-          <p className="mb-4">Don't have an account? <a href="#" className="text-decoration-none">Sign up</a></p>
+          <p className="mb-4">Don't have an account? <Link to="/register" className="text-decoration-none">Sign up</Link></p>
         </div>
         <div className="p-4 bg-light rounded shadow-sm">
           <form>
