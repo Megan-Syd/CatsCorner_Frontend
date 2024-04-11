@@ -1,10 +1,11 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSignIn } from "@fortawesome/free-solid-svg-icons";
+import Logo from '../assets/Logo.png';
+
 export default function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
+        <img  src={Logo} alt="logo" style={{ marginRight: '10px' }} width="30" height="30" className="d-inline-block align-top" />
           Dance Academy
         </a>
         <button
@@ -38,16 +39,23 @@ export default function Navbar() {
                 Contact
               </a>
             </li>
-          </ul>
-          <ul className="navbar-nav ">
+            <li className="nav-item">
+              <a className="nav-link" href="/register">
+                Sign Up
+              </a>
+            </li>
             <li className="nav-item">
               <a className="nav-link" href="/login">
-                Login <FontAwesomeIcon icon={faSignIn} />
+                Login
               </a>
             </li>
           </ul>
         </div>
       </div>
+    </nav>
+  );
+}
+
     </nav>
   );
 }
