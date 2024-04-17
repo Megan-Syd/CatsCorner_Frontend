@@ -6,7 +6,7 @@ export default function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <a className="navbar-brand" href="/home">
           <img
             src={Logo}
             alt="logo"
@@ -15,7 +15,7 @@ export default function Navbar() {
             height="30"
             className="d-inline-block align-top"
           />
-          Dance Academy
+          Cats Corner
         </a>
         <button
           className="navbar-toggler"
@@ -53,7 +53,7 @@ export default function Navbar() {
           <ul className="navbar-nav ">
             <li className="nav-item">
               <a className="nav-link" href="/register">
-                Sign Up
+                Register
               </a>
             </li>
             <li className="nav-item">

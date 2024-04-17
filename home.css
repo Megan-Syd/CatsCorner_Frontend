@@ -1,0 +1,13 @@
+#carouselIndicators {
+  background-color: rgb(222, 222, 222);
+}
+
+#carouselIndicators .carousel-item {
+  height: 45vh;
+}
+
+#carouselIndicators .carousel-item img {
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+}

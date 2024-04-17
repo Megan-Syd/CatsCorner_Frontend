@@ -9,12 +9,12 @@ import {
 export default function Footer() {
   return (
     <footer
-      className="py-3 bg-primary text-center"
+      className="py-2 bg-primary text-center"
       style={{ position: "fixed", bottom: 0, width: "100%" }}
     >
       <div className="container">
         <p className="text-white">
-          <FontAwesomeIcon icon={faCopyright} /> Copyright 2023. All Rights
+          <FontAwesomeIcon icon={faCopyright} /> Copyright 2024. All Rights
           Reserved.
         </p>
         <a href="https://www.facebook.com/" target="_blank" className="mx-3">
