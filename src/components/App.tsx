@@ -7,6 +7,7 @@ import Footer from "./Footer";
 import Register from "./Register";
 import { useState, useEffect } from "react";
 import Home from "./Home";
+import About from "./AboutUs";
 
 function App() {
   const [courses, setCourses] = useState([]);
@@ -29,6 +30,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<About />} />
         </Routes>
         <Footer />
       </div>
