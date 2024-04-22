@@ -65,7 +65,7 @@ const Contact: React.FC = () => {
                 Your Phone Number
               </label>
               <div className="input-group">
-                <span className="input-group-text"></span>
+                <span className="input-group-text">+514</span>
                 <input
                   type="tel"
                   id="phoneNumber"
