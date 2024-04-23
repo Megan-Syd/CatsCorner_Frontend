@@ -1,12 +1,14 @@
-import React, { forwardRef, useRef, useState } from 'react';
+import React, { forwardRef, useRef, useState, ChangeEvent } from 'react';
 import { HiEye, HiEyeOff } from 'react-icons/hi';
 
 interface RegisterPasswordProps {
     id: string;
     name: string;
+    value?: string;
     autoComplete?: string;
     required?: boolean;
     className?: string;
+    onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   }
 
   export const RegisterPassword = forwardRef<HTMLInputElement, RegisterPasswordProps>((props, ref) => {
