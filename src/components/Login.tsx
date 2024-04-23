@@ -1,9 +1,44 @@
 import { OAuthButtonGroup } from "./OAuthButtonGroup";
 import { PasswordField } from "./PasswordField";
 import { Link } from "react-router-dom";
+import React, { useState, ChangeEvent, FormEvent } from 'react';
 
-export const Login = () => (
-  <div className="container-lg py-4">
+export const Login = () => {
+
+  const [formData, setFormData] = useState({
+    password: '',
+    username: ''
+  });
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('http://localhost:8080/api/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+      if (!response.ok) {
+        throw new Error('Login failed');
+      }
+      // Redirect to dashboard or any other page on successful login
+    } catch (error: any) {
+      console.error('Error during login:', error.message);
+    }
+  };
+
+  return(
+    <div className="container-lg py-4">
     <div className="row justify-content-center">
       <div className="col-md-6">
         <div className="text-center">
@@ -16,32 +51,22 @@ export const Login = () => (
           </p>
         </div>
         <div className="p-4 bg-light rounded shadow-sm">
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="mb-4">
-              <label htmlFor="email" className="form-label">
-                Email
+              <label htmlFor="username" className="form-label">
+                Username
               </label>
-              <input type="email" className="form-control" id="email" />
+              <input type="text" className="form-control" id="username" name="username" value={formData.username} onChange={handleChange} />
             </div>
             <div className="mb-4">
               <label htmlFor="password" className="form-label">
                 Password
               </label>
-              <PasswordField
-                id="password"
-                name="password"
-                autoComplete="current-password"
-                required
-              />
+              <input type="password" className="form-control" id="password" name="password" value={formData.password} onChange={handleChange} autoComplete="current-password" required />
             </div>
             <div className="mb-3 form-check d-flex justify-content-between">
               <div>
-                <input
-                  type="checkbox"
-                  className="form-check-input"
-                  id="rememberMe"
-                  defaultChecked
-                />
+                <input type="checkbox" className="form-check-input" id="rememberMe" defaultChecked />
                 <label className="form-check-label" htmlFor="rememberMe">
                   Remember me
                 </label>
@@ -64,5 +89,6 @@ export const Login = () => (
     </div>
   </div>
 );
+};
 
 export default Login;
