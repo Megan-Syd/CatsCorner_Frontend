@@ -53,6 +53,11 @@ export default function Navbar() {
                 Contact
               </a>
             </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/faq">
+                F.A.Q
+              </a>
+            </li>
           </ul>
 
           <ul className="navbar-nav ">
