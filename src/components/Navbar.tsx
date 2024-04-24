@@ -44,6 +44,11 @@ export default function Navbar() {
               </a>
             </li>
             <li className="nav-item">
+              <a className="nav-link" href="/instructors">
+                Instructors
+              </a>
+            </li>
+            <li className="nav-item">
               <a className="nav-link" href="/contact">
                 Contact
               </a>
@@ -53,7 +58,7 @@ export default function Navbar() {
           <ul className="navbar-nav ">
             <li className="nav-item">
               <a className="nav-link" href="/register">
-                Register
+                Sign UP
               </a>
             </li>
             <li className="nav-item">

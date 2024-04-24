@@ -8,6 +8,7 @@ import Register from "./Register";
 import { useState, useEffect } from "react";
 import Home from "./Home";
 import About from "./AboutUs";
+import Instructor from "./Instructor";
 
 function App() {
   const [courses, setCourses] = useState([]);
@@ -25,13 +26,14 @@ function App() {
       <div>
         <Navbar />
         <Routes>
+          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/programms" element={<CourseList courses={courses} />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/instructors" element={<Instructor />} />
         </Routes>
         <Footer />
       </div>
