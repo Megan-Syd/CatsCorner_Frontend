@@ -31,6 +31,7 @@ export const Login = () => {
       if (!response.ok) {
         throw new Error('Login failed');
       }
+      window.location.href = '/home';
       // Redirect to dashboard or any other page on successful login
     } catch (error: any) {
       console.error('Error during login:', error.message);
