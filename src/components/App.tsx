@@ -9,6 +9,7 @@ import { useState, useEffect } from "react";
 import Home from "./Home";
 import About from "./AboutUs";
 import Instructor from "./Instructor";
+import FAQ from "./FAQ";
 
 function App() {
   const [courses, setCourses] = useState([]);
@@ -34,6 +35,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/about" element={<About />} />
           <Route path="/instructors" element={<Instructor />} />
+          <Route path="/faq" element={<FAQ />} />
         </Routes>
         <Footer />
       </div>
