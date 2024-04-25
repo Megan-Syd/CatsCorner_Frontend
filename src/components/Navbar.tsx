@@ -1,12 +1,18 @@
 import Logo from "../assets/Logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSignIn } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
-export default function Navbar() {
+interface NavbarProps {
+  user: UserType | null;
+  onLogout: () => void;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ user, onLogout }) => {
   return (
     <nav className="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
       <div className="container-fluid">
-        <a className="navbar-brand" href="/home">
+        <a className="navbar-brand" href="#">
           <img
             src={Logo}
             alt="logo"
@@ -28,52 +34,75 @@ export default function Navbar() {
         <div className="collapse navbar-collapse" id="navbarColor01">
           <ul className="navbar-nav me-auto">
             <li className="nav-item">
-              <a className="nav-link active" href="/home">
+              <Link className="nav-link active" to="/home">
                 Home
-                <span className="visually-hidden">(current)</span>
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/about">
+              <Link className="nav-link" to="/about">
                 About
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/programms">
+              <Link className="nav-link" to="/programms">
                 Programms
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/instructors">
+              <Link className="nav-link" to="/instructors">
                 Instructors
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/contact">
+              <Link className="nav-link" to="/contact">
                 Contact
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/faq">
+              <Link className="nav-link" to="/faq">
                 F.A.Q
-              </a>
+              </Link>
             </li>
+            {user && (
+              <li className="nav-item">
+                <Link className="nav-link" to="/dashboard">
+                  Dashboard
+                </Link>
+              </li>
+            )}
           </ul>
 
           <ul className="navbar-nav ">
-            <li className="nav-item">
-              <a className="nav-link" href="/register">
-                Sign UP
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/login">
-                Login <FontAwesomeIcon icon={faSignIn} />
-              </a>
-            </li>
+            {user ? (
+              <>
+                <li className="nav-item">
+                  <span className="nav-link">Welcome, {user.username}</span>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" onClick={onLogout} href="/logout">
+                    Logout
+                  </a>
+                </li>
+              </>
+            ) : (
+              <>
+                <li className="nav-item">
+                  <a className="nav-link" href="/register">
+                    Register
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="/login">
+                    Login <FontAwesomeIcon icon={faSignIn} />
+                  </a>
+                </li>
+              </>
+            )}
           </ul>
         </div>
       </div>
     </nav>
   );
-}
+};
+
+export default Navbar;
