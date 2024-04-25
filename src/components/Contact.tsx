@@ -18,12 +18,11 @@ const Contact: React.FC = () => {
 
   const handleSubmit = async (e: FormEvent): Promise<void> => {
     e.preventDefault();
+
     const config = {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
-        Authorization:
-          "Basic " + btoa("User:df7c2657-89aa-4423-b4f2-47f2e9215616"),
       },
     };
     try {
@@ -65,7 +64,7 @@ const Contact: React.FC = () => {
                 Your Phone Number
               </label>
               <div className="input-group">
-                <span className="input-group-text">+514</span>
+                <span className="input-group-text"></span>
                 <input
                   type="tel"
                   id="phoneNumber"
