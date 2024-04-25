@@ -1,41 +1,80 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import Navbar from "./Navbar";
 import CourseList from "./CourseList";
 import Contact from "./Contact";
 import Login from "./Login";
 import Footer from "./Footer";
 import Register from "./Register";
-import { useState, useEffect } from "react";
 import Home from "./Home";
+import Dashboard from "./Dashboard";
 import About from "./AboutUs";
 import Instructor from "./Instructor";
 import FAQ from "./FAQ";
+import { useState, useEffect } from "react";
 
 function App() {
   const [courses, setCourses] = useState([]);
+  const [user, setUser] = useState<UserType | null>(null);
+
   useEffect(() => {
-    // Fetch data from the API
-    fetch("http://localhost:8080/api/courses")
-      .then((response) => response.json())
-      .then((data) => {
-        setCourses(data); // Set the fetched data to the state
-      })
-      .catch((error) => console.error("Error fetching data:", error));
-  }, []); // Empty dependency array to run the effect only once when the component mounts
+    const fetchCourses = async () => {
+      try {
+        const response = await fetch("http://localhost:8080/api/courses");
+        const data = await response.json();
+        setCourses(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchCourses();
+    const storedUser = localStorage.getItem("user");
+    if (storedUser && storedUser !== "undefined" && storedUser !== "null") {
+      try {
+        const userObject = JSON.parse(storedUser);
+        setUser(userObject);
+      } catch (e) {
+        console.error("Parsing error:", e);
+      }
+    }
+  }, []);
+
+  const handleLogout = () => {
+    setUser(null);
+    localStorage.removeItem("user");
+    window.location.href = "/login";
+  };
+
   return (
     <Router>
       <div>
-        <Navbar />
+        <Navbar user={user} onLogout={handleLogout} />
         <Routes>
           <Route path="/home" element={<Home />} />
-          <Route path="/" element={<Home />} />
           <Route path="/programms" element={<CourseList courses={courses} />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/about" element={<About />} />
           <Route path="/instructors" element={<Instructor />} />
           <Route path="/faq" element={<FAQ />} />
+          <Route path="/about" element={<About />} />
+
+          <Route path="/register" element={<Register />} />
+          <Route
+            path="/login"
+            element={<Login onLogin={(user) => setUser(user)} />}
+          />
+          {user && (
+            <Route
+              path="/dashboard"
+              element={
+                user ? (
+                  <Dashboard user={user} courses={courses} />
+                ) : (
+                  <Login onLogin={(user) => setUser(user)} />
+                )
+              }
+            />
+          )}
         </Routes>
         <Footer />
       </div>
