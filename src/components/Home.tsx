@@ -1,6 +1,7 @@
-import dance1 from "../assets/1.jpg";
-import dance2 from "../assets/2.jpg";
-import dance3 from "../assets/3.jpg";
+import dance1 from "../assets/1.png";
+import dance2 from "../assets/2.png";
+import dance3 from "../assets/3.png";
+import dance4 from "../assets/4.png";
 import "../../home.css";
 export default function Home() {
   return (
@@ -12,14 +13,17 @@ export default function Home() {
         data-bs-ride="carousel"
       >
         <div id="carousel" className="carousel-inner">
-          <div className="carousel-item active " data-bs-interval="3000">
+          <div className="carousel-item active " data-bs-interval="2500">
             <img src={dance1} alt="dance" />
           </div>
-          <div className="carousel-item" data-bs-interval="3000">
+          <div className="carousel-item" data-bs-interval="2500">
             <img src={dance2} alt="dance" />
           </div>
-          <div className="carousel-item" data-bs-interval="3000">
+          <div className="carousel-item" data-bs-interval="2500">
             <img src={dance3} alt="dance" />
+          </div>
+          <div className="carousel-item" data-bs-interval="2500">
+            <img src={dance4} alt="dance" />
           </div>
         </div>
         <button

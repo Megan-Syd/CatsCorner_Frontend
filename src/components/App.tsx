@@ -52,6 +52,7 @@ function App() {
         <Navbar user={user} onLogout={handleLogout} />
         <Routes>
           <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/programms" element={<CourseList courses={courses} />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/instructors" element={<Instructor />} />
