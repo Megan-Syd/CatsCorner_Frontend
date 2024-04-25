@@ -96,10 +96,14 @@ export const Register = () => {
               >
                 Sign up
               </button>
+              <hr />
+              <p className="text-center mb-3">or continue with</p>
+              <div className="btn-group d-grid gap-2">
+                <OAuthButtonGroup />
+              </div>
             </form>
           </div>
         </div>
-        <OAuthButtonGroup />
       </div>
     </div>
   );
