@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ballet from "../assets/ballet.jpg";
+import lindyHop from "../assets/lindy-hop.jpg";
 
 const About: React.FC = () => {
   return (
@@ -11,7 +11,7 @@ const About: React.FC = () => {
             <img
               className="img-fluid rounded"
               loading="lazy"
-              src={ballet}
+              src={lindyHop}
               alt=""
             />
           </div>
@@ -32,7 +32,7 @@ const About: React.FC = () => {
                   of seeking, learning, and sharing the best of swing remains
                   central.
                 </p>
-                <h3 className="mb-3">Our Mission</h3>
+                {/* <h3 className="mb-3">Our Mission</h3> */}
                 <p>
                   In its 25-year journey, Cat’s Corner has navigated various
                   leadership transitions and physical spaces – from streets and
