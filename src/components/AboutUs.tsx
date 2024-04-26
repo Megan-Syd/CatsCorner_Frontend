@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import lindyHop from "../assets/lindy-hop.jpg";
+import lindyHop from "../assets/lindyhop.jpg";
 
 const About: React.FC = () => {
   return (
@@ -12,7 +12,7 @@ const About: React.FC = () => {
               className="img-fluid rounded"
               loading="lazy"
               src={lindyHop}
-              alt=""
+              alt="Lindy Hop dancers"
             />
           </div>
           <div className="col-12 col-lg-6 col-xl-7">
