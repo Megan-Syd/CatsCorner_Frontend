@@ -7,19 +7,19 @@ export default function Instructor() {
     {
       name: "Joanna Doe",
       description:
-        "Joanna is a passionate dancer with over 10 years of experience in various dance styles including salsa, hip hop, and contemporary. She believes in making dance accessible to everyone and loves to inspire her students to express themselves through movement.",
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate et nesciunt architecto ipsam, fugit culpa libero veniam saepe dolorum quidem. Doloremque saepe fuga totam officia repudiandae laboriosam blanditiis eligendi quisquam.",
       imageUrl: instructor1,
     },
     {
       name: "John Smith",
       description:
-        "John is a professional ballet dancer who has performed in renowned theaters worldwide. With his extensive knowledge of ballet technique and choreography, he aims to instill discipline and grace in his students while nurturing their love for dance.",
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate et nesciunt architecto ipsam, fugit culpa libero veniam saepe dolorum quidem. Doloremque saepe fuga totam officia repudiandae laboriosam blanditiis eligendi quisquam.",
       imageUrl: instructor2,
     },
     {
       name: "Daniela Brown",
       description:
-        "Daniela is a versatile dancer specializing in Latin dances such as salsa, bachata, and merengue. She brings energy and charisma to her classes, creating a fun and dynamic learning environment where students can develop their skills and confidence.",
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate et nesciunt architecto ipsam, fugit culpa libero veniam saepe dolorum quidem. Doloremque saepe fuga totam officia repudiandae laboriosam blanditiis eligendi quisquam.",
       imageUrl: instructor3,
     },
   ];

@@ -52,7 +52,7 @@ export default function Home() {
             Discover the vibrant world of dance and let the rhythm guide you.
             Whether you're a beginner or an experienced dancer, our passionate
             instructors are here to help you master the art of dancing. Join us
-            on an exciting journey as we share our love for Latin rhythms and
+            on an exciting journey as we share our love for Jazz rhythms and
             cultural expressions. Our studio provides a welcoming and inclusive
             environment where you can learn, grow, and connect with fellow dance
             enthusiasts.
